@@ -52,6 +52,9 @@ The following commands are provided by lf:
     toggle
     invert                   (default 'v')
     unselect                 (default 'u')
+    visual-toggle            (default 'V')
+    visual-reverse
+    visual-exit
     glob-select
     glob-unselect
     calcdirsize
@@ -392,6 +395,24 @@ Reverse the selection of all files in the current directory (i.e. 'toggle' all f
 .PP
 .EX
     unselect                 (default 'u')
+.EE
+.PP
+Toggle visual selection mode. In visual selection mode, files are selected while the cursor moves over them.
+.PP
+.EX
+    visual-toggle            (default 'V')
+.EE
+.PP
+Toggle reverse visual selection mode. In reverse visual selection mode, files are unselected while the cursor moves over them.
+.PP
+.EX
+    visual-reverse
+.EE
+.PP
+Exit visual or reverse visual mode, making the selection permanent.
+.PP
+.EX
+    visual-exit
 .EE
 .PP
 Remove the selection of all files in all directories.
