@@ -1168,26 +1168,14 @@ func (nav *nav) visualSelectRange(from int, to int) {
 		}
 	}
 	for i := lo; i <= hi; i++ {
-		path := filepath.Join(dir.path, dir.files[i].Name())
+		path := dir.files[i].path
 		if nav.visualReverse {
-			if _, ok := nav.selections[path]; ok {
-				// file is currently selected. unselect it
-				nav.unselectFile(path)
-			} else {
-				// file is not currently selected. if it is form the old selection, select
-				if _, ok := nav.oldSelections[path]; ok {
-					nav.selectFile(path)
-				}
+			if _, ok := nav.oldSelections[path]; ok {
+				nav.toggleSelection(path)
 			}
 		} else {
-			if _, ok := nav.selections[path]; !ok {
-				// file is not currently selected. select it
-				nav.selectFile(path)
-			} else {
-				// file is currently selected. unselect only if it is not in the old selection
-				if _, ok := nav.oldSelections[path]; !ok {
-					nav.unselectFile(path)
-				}
+			if _, ok := nav.oldSelections[path]; !ok {
+				nav.toggleSelection(path)
 			}
 		}
 	}

@@ -164,6 +164,7 @@ func init() {
 	gOpts.keys["t"] = &callExpr{"tag-toggle", nil, 1}
 	gOpts.keys["v"] = &callExpr{"invert", nil, 1}
 	gOpts.keys["u"] = &callExpr{"unselect", nil, 1}
+	gOpts.keys["V"] = &callExpr{"visual-toggle", nil, 1}
 	gOpts.keys["y"] = &callExpr{"copy", nil, 1}
 	gOpts.keys["d"] = &callExpr{"cut", nil, 1}
 	gOpts.keys["c"] = &callExpr{"clear", nil, 1}
